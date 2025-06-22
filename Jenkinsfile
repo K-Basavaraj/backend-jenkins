@@ -8,7 +8,7 @@ pipeline {
    }
    environment {
      DEBUG = 'true'
-     appversion = '' //this is global varible we can use any where inthe pipeline
+     //appversion = '' //this is global varible we can use any where inthe pipeline
     }
    stages {
       stage('Version') {
