@@ -11,6 +11,12 @@ pipeline {
      //appversion = '' //this is global varible we can use any where inthe pipeline
     }
    stages {
+     stage('debug') {
+            steps {
+                echo 'debugging..'
+                sh 'env'
+            }
+     }
       stage('Version') {
         steps {
           script {
