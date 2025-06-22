@@ -11,7 +11,7 @@ pipeline {
      appversion = '' //this is global varible we can use any where inthe pipeline
     }
    stages {
-      stage('Version')
+      stage('Version') {
         steps {
           script {
             def packageJson = readJSON file: 'package.json'
