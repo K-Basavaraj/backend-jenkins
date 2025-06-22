@@ -28,5 +28,18 @@ pipeline {
           }
        }
     }
+    stage('install dependencies'){
+        steps {
+            sh 'npm install'
+        }
+    }
+    stage('Docker build'){
+        steps {
+            sh """
+              docker build -t basavaraj0509/backend:${appversion} .
+              docker images
+            """
+        }
+    }
   }
 }
