@@ -8,7 +8,7 @@ pipeline {
    }
    environment {
      DEBUG = 'true'
-     appversion = '' //this is global varible we can use any where inthe pipeline
+     //appversion = '' //this is global varible we can use any where inthe pipeline
     }
    stages {
      stage('debug') {
@@ -21,10 +21,10 @@ pipeline {
         steps {
           script {
             def packageJson = readJSON file: 'package.json'
-            appversion = packageJson.version
-            echo "App version: ${appversion}"
-            // env.appversion = packageJson.version
-            // echo "App version: ${env.appversion}"
+            // appversion = packageJson.version
+            // echo "App version: ${appversion}"
+            env.appversion = packageJson.version
+            echo "App version: ${env.appversion}"
           }
        }
     }
